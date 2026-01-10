@@ -1,0 +1,32 @@
+from llama_cpp import Llama
+import gradio as gr
+
+MODEL_PATH = "/home/ben/llm_local/models/qwen2.5-1.5b-q4_k_m.gguf"
+
+llm = Llama(
+    model_path=MODEL_PATH,
+    n_ctx=4096,
+    n_threads=4,
+    n_gpu_layers=0
+)
+
+def generate_response(message, history):
+    messages = []
+    for user_msg, bot_msg in history:
+        messages.append({"role": "user", "content": user_msg})
+        messages.append({"role": "assistant", "content": bot_msg})
+    messages.append({"role": "user", "content": message})
+    
+    response = llm.create_chat_completion(
+        messages=messages,
+        max_tokens=512,
+        temperature=0.7,
+        stop=["<|im_end|>"]
+    )
+    return response["choices"][0]["message"]["content"]
+
+gr.ChatInterface(
+    generate_response,
+    title="Qwen2.5 Local Chat",
+    description="Offline chat with Qwen2.5-1.5B-Instruct (Q4_K_M) on your Debian machine."
+).launch(inbrowser=True)
