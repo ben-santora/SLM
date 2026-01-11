@@ -47,7 +47,7 @@ Download or place a GGUF model file somewhere on your system. Update the MODEL_P
 
 Example model path used in the script:
 
-    /home/ben/llm_local/models/phi3-mini-4k-instruct-q4_k_m.gguf
+    /home/ben/llm_local/models/phi-3-mini-4k-instruct-q4_k_m.gguf
 
 Only GGUF models compatible with llama.cpp will work.
 
