@@ -1,4 +1,4 @@
-# SLM Local Chat Interface (GGUF, llama.cpp, Gradio)
+# SLM Local Chat Interface in Python (GGUF, llama.cpp, Gradio)
 
 This repository contains variations of a simple but well-structured Python application that provides a clean, browser-based chat interface for running local small language models (SLMs) in GGUF format using llama.cpp. It is intended for users who want an offline, lightweight, and understandable alternative to large frameworks or cloud-based services.
 
