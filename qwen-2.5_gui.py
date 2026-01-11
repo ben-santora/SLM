@@ -1,7 +1,7 @@
 from llama_cpp import Llama
 import gradio as gr
 
-MODEL_PATH = "/home/ben/llm_local/models/qwen2.5-1.5b-q4_k_m.gguf"
+MODEL_PATH = "/home/ben/llm_local/models/qwen-2.5-1.5b-q4_k_m.gguf"
 
 llm = Llama(
     model_path=MODEL_PATH,
